@@ -14,7 +14,6 @@ function App() {
 					<Router>
 						<Switch>
 							<Route path='/customer/:id' component={CustomerDetail} />
-
 							<Route exact path='/' component={Homepage} />
 						</Switch>
 					</Router>

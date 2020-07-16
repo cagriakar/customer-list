@@ -1,11 +1,11 @@
 /* eslint-disable react/display-name */
 import { Avatar, Button, FormControlLabel, Grid, Switch } from '@material-ui/core';
-import MaterialTable from 'material-table';
+import MaterialTable, { MTableBodyRow } from 'material-table';
 import React, { useState } from 'react';
 import { tableIcons } from '../../assets/tableIcons';
 
 const CustomerList = ({ customers }) => {
-	const goTo = (param) => window.location.assign(`/customer/${param}`);
+	const goTo = (param) => window.location.assign(`${window.location.href}customer/${param}`);
 
 	const [isDense, setIsDense] = useState(false);
 
@@ -30,7 +30,8 @@ const CustomerList = ({ customers }) => {
 							}}>
 							{props.action.tooltip === 'Update Customer' ? 'Update' : 'Delete'}
 						</Button>
-					)
+					),
+					Row: (props) => <MTableBodyRow {...props} />
 				}}
 				options={{
 					filtering: true,
